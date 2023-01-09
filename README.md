@@ -82,7 +82,6 @@ c:\opt\java\openjdk\x86_64\jdk8u352-b08
 
 Set **JAVA_HOME** environment variable
 ```bash
-
 # Linux
 export JAVA_HOME=/opt/java/openjdk/linux_x86_64/jdk8u352-b08
 
@@ -98,7 +97,6 @@ https://ant.apache.org/bindownload.cgi
 
 Install into your system
 ```bash
-
 # Linux
 /opt/apache-ant/apache-ant-1.10.12
 
