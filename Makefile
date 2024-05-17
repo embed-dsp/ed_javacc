@@ -5,7 +5,7 @@
 
 PACKAGE_NAME = javacc
 
-PACKAGE_VERSION = 7.0.12
+PACKAGE_VERSION = 7.0.13
 
 PACKAGE = $(PACKAGE_NAME)-$(PACKAGE_VERSION)
 
@@ -22,9 +22,6 @@ endif
 ifeq ($(findstring MINGW64, $(shell uname -s)), MINGW64)
 	SYSTEM = mingw64
 endif
-ifeq ($(findstring CYGWIN, $(shell uname -s)), CYGWIN)
-	SYSTEM = cygwin
-endif
 
 # Determine machine.
 MACHINE = $(shell uname -m)
@@ -36,32 +33,25 @@ ARCH = $(SYSTEM)_$(MACHINE)
 
 # Configuration for linux system.
 ifeq ($(SYSTEM), linux)
-	# Apache Ant.
-	# https://ant.apache.org
-    ANT_DIR = /opt/apache-ant/apache-ant-1.10.12/bin
+    # Apache Ant.
+    # https://ant.apache.org
+    ANT_DIR = /opt/apache-ant/apache-ant-1.10.14/bin
 	
-	INSTALL_DIR = /opt
+    INSTALL_DIR = /opt
 endif
 
 # Configuration for mingw32 system.
 ifeq ($(SYSTEM), mingw32)
-    ANT_DIR = /c/opt/apache-ant/apache-ant-1.10.12/bin
+    ANT_DIR = /c/opt/apache-ant/apache-ant-1.10.14/bin
 
-	INSTALL_DIR = /c/opt
+    INSTALL_DIR = /c/opt
 endif
 
 # Configuration for mingw64 system.
 ifeq ($(SYSTEM), mingw64)
-    ANT_DIR = /c/opt/apache-ant/apache-ant-1.10.12/bin
+    ANT_DIR = /c/opt/apache-ant/apache-ant-1.10.14/bin
 
-	INSTALL_DIR = /c/opt
-endif
-
-# Configuration for cygwin system.
-ifeq ($(SYSTEM), cygwin)
-    ANT_DIR = /cygdrive/c/opt/apache-ant/apache-ant-1.10.12/bin
-	
-	INSTALL_DIR = /cygdrive/c/opt
+    INSTALL_DIR = /c/opt
 endif
 
 # Installation directory.
